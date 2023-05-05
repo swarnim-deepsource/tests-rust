@@ -4,12 +4,7 @@ enum A {
 }
 
 fn foo() {
-    // Should not catch this as B is a constructor
     let _ = A::B as usize;
-    // "ARCHIVE IT" [RS-W1103]: "Cast from enum variant to type"
-    // let _ = A::C as usize;
-    // "ARCHIVE IT" [RS-W1103]: "Cast from enum variant to type"
-    // let _ = A::C as usize;
 }
 
 #[repr(C)]
