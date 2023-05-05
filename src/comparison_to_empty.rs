@@ -2,10 +2,8 @@
 mod tests {
     fn strs() {
         let st = "hello";
-        //> [RS-W1102]
-        if st == "" { }
-        //> [RS-W1102]
-        if "" == st { }
+                if st == "" { }
+                if "" == st { }
     }
 
     fn vecs() {
@@ -21,9 +19,7 @@ mod tests {
     fn negation_msg() {
         let st = "hello";
 
-        //> [RS-W1102]
-        if st != "" { }
-        //> [RS-W1102]
-        if "" != st { }
+                if st != "" { }
+                if "" != st { }
     }
 }

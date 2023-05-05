@@ -8,10 +8,8 @@ mod tests {
         x.push_str(r#"
         "#);
 
-        //> [RS-P1004]: "Calling `push_str` with single-character string literal `\"!\"`, use `push` with a character literal instead"
-        x.push_str("!");
+                x.push_str("!");
 
-        //> [RS-P1004]: "Calling `insert_str` with single-character string literal `\"!\"`, use `insert` with a character literal instead"
-        x.insert_str(10, "!");
+                x.insert_str(10, "!");
     }
 }

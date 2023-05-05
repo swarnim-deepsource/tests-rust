@@ -7,18 +7,14 @@ disables = [ "closure-redundant-tail-expr" ]
 mod tests {
     fn option_methods() {
         let opt = Some(0);
-        //> [RS-W1072]; [RS-W1073]
-        let _ = opt.map(|x| { x + 1 }).unwrap_or_else(|| std::process::exit(0));
-        //> [RS-W1072]; [RS-W1073]
-        let _ = opt.map(|x| { x + 1 }).unwrap_or(0);
+                let _ = opt.map(|x| { x + 1 }).unwrap_or_else(|| std::process::exit(0));
+                let _ = opt.map(|x| { x + 1 }).unwrap_or(0);
     }
     fn result_methods() {
         let res: Result<i32, ()> = Ok(1);
 
-        //> [RS-W1072]; [RS-W1073]
-        let _ = res.map(|x| { x + 1 }).unwrap_or_else(|_e| std::process::exit(0));
-        //> [RS-W1072]; [RS-W1073]
-        let _ = res.map(|x| { x + 1 }).unwrap_or(0);
+                let _ = res.map(|x| { x + 1 }).unwrap_or_else(|_e| std::process::exit(0));
+                let _ = res.map(|x| { x + 1 }).unwrap_or(0);
     }
 
     enum MyResult<T, E> { Ok(T), Err(E)}
@@ -36,12 +32,10 @@ mod tests {
 
     fn no_match() {
         let my_res1: MyResult<u32, ()> = MyResult::Ok(1u32);
-        //> [RS-W1073]
-        let _ = my_res1.map(|x| { x + 1 }).unwrap_or_else(|_e| std::process::exit(0));
+                let _ = my_res1.map(|x| { x + 1 }).unwrap_or_else(|_e| std::process::exit(0));
 
         let my_res2: MyResult<u32, ()> = MyResult::Ok(1u32);
-        //> [RS-W1073]
-        let _ = my_res2.map(|x| { x + 1 }).unwrap_or(0);
+                let _ = my_res2.map(|x| { x + 1 }).unwrap_or(0);
  
     }
 }

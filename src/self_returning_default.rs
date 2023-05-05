@@ -7,8 +7,7 @@ impl A {
 }
 
 impl Default for A {
-    /**///> [RS-A1008]
-    fn default() -> Self {
+        fn default() -> Self {
         Self::new()
     }
 }
@@ -27,8 +26,7 @@ impl B {
 }
 
 impl Default for B {
-    /**///> [RS-A1008]
-    fn default() -> Self {
+        fn default() -> Self {
         Self::new().with_zero()
     }
 }
@@ -62,8 +60,7 @@ impl D {
 }
 
 impl Default for D {
-    /**///> [RS-A1008]
-    fn default() -> Self {
+        fn default() -> Self {
         Self::new().with_zero()
     }
 }

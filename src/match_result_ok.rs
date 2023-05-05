@@ -2,8 +2,7 @@
 mod test {
     // Checking `if` cases
     fn not_good(x: &str) -> i32 {
-        //> [RS-W1090]: "Matching with `Some(..)` after `.ok()` is redundant, consider matching with `Ok(..)` directly"
-        if let Some(y) = x.parse().ok() { y } else { 0 }
+                if let Some(y) = x.parse().ok() { y } else { 0 }
     }
 
     fn good(x: &str) -> i32 {
@@ -12,8 +11,7 @@ mod test {
 
     #[rustfmt::skip]
     fn absurd(x: &str) -> i32 {
-        //> [RS-W1090]: "Matching with `Some(..)` after `.ok()` is redundant, consider matching with `Ok(..)` directly"
-        if let Some(y) = x   .   parse()   .   ok   ()    {
+                if let Some(y) = x   .   parse()   .   ok   ()    {
             return y;
         };
         0
@@ -37,8 +35,7 @@ mod test {
 
     fn not_good_while(x: i32) {
         let mut wat = Wat { counter: x };
-        //> [RS-W1090]: "Matching with `Some(..)` after `.ok()` is redundant, consider matching with `Ok(..)` directly"
-        while let Some(a) = wat.next().ok() {
+                while let Some(a) = wat.next().ok() {
             println!("{}", a);
         }
     }

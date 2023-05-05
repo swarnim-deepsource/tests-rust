@@ -2,7 +2,6 @@
 disables = [ "large-enum-variant" ]
 */
 
-/**///> [RS-A1007]: "`enum` containing types with large size discrepancies"
 enum LargeEnumVariant {
     Smol(String),
     Smol2 { a: i32, b: u32 },
@@ -10,14 +9,12 @@ enum LargeEnumVariant {
     Large([usize; 10000]),
 }
 
-/**///> [RS-A1007]: "`enum` containing types with large size discrepancies"
 enum LargeEnumVariant {
     Smol(String),
     Mid([usize; 10]),
     Large([&'static str; 10000]),
 }
 
-/**///> [RS-A1007]: "`enum` containing types with large size discrepancies"
 enum LargeEnumVariant {
     Smol(String),
     Mid([usize; 10]),

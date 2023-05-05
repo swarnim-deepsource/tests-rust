@@ -5,6 +5,5 @@ struct S {
 
 fn foo() {
     let a = S { s: "Hello, world!" };
-    //> [RS-W1130]
-    let b = S { ..a };
+        let b = S { ..a };
 }

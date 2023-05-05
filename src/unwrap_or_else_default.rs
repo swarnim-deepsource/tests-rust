@@ -1,5 +1,4 @@
-/* disables = ['empty-tuple'] */ //> scatr-check: RS-W1104
-#[rustfmt::skip]
+/* disables = ['empty-tuple'] */ #[rustfmt::skip]
 fn f() {
     struct Foo;
 
@@ -35,8 +34,7 @@ fn f() {
     with_enum.unwrap_or_else(Enum::A);
 
     let with_new = Some(vec![1]);
-    //> [RS-W1104]: "Using `.unwrap_or_else(..)` with `Vec::new` instead of `.unwrap_or_default()`"
-    with_new.unwrap_or_else(Vec::new);
+        with_new.unwrap_or_else(Vec::new);
 
     let with_err: Result<_, ()> = Ok(vec![1]);
     with_err.unwrap_or_else(make);
@@ -45,18 +43,14 @@ fn f() {
     with_fake_default.unwrap_or_else(Foo::default);
 
     let with_real_default = None::<HasDefaultAndDuplicate>;
-    //> [RS-W1104]
-    with_real_default.unwrap_or_else(<HasDefaultAndDuplicate as Default>::default);
+        with_real_default.unwrap_or_else(<HasDefaultAndDuplicate as Default>::default);
 
     let with_default_trait = Some(1);
-    //> [RS-W1104]
-    with_default_trait.unwrap_or_else(std::default::Default::default);
+        with_default_trait.unwrap_or_else(std::default::Default::default);
 
     let with_default_type = Some(1);
-    //> [RS-W1104]
-    with_default_type.unwrap_or_else(u64::default);
+        with_default_type.unwrap_or_else(u64::default);
 
     let with_default_type: Option<Vec<u64>> = None;
-    //> [RS-W1104]
-    with_default_type.unwrap_or_else(Vec::new);
+        with_default_type.unwrap_or_else(Vec::new);
 }

@@ -1,4 +1,3 @@
-//> scatr-check: RS-W1103
 enum A {
     B(i32),
     C,

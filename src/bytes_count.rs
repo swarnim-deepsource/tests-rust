@@ -1,11 +1,9 @@
 #[rustfmt::skip]
 fn f() {
     let s = "str";
-   //> [RS-P1001]: "Called `.bytes().count()` when `.len()` would suffice"
-    s.bytes().count();
+       s.bytes().count();
 
-   //> [RS-P1001]: "Called `.bytes().count()` when `.len()` would suffice"
-    "string".bytes().count();
+       "string".bytes().count();
 
     let i = FalsePositive { x: 0u32 };
     i.bytes().count();

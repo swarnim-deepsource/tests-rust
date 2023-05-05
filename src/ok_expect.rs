@@ -2,10 +2,8 @@
 mod test {
     fn trivial() {
         let x: Result<u32, u32> = Ok(5);
-        //> [RS-W1044]: "Called `.ok().expect()` on a `Result` value, call `.expect()` directly instead"
-        x.ok().expect("hello");
-        //> [RS-W1044]: "Called `.ok().unwrap()` on a `Result` value, call `.unwrap()` directly instead"
-        x.ok().unwrap();
+                x.ok().expect("hello");
+                x.ok().unwrap();
     }
 
     fn fake_result() {

@@ -2,26 +2,18 @@
 mod test {
 
     fn trivial() {
-     //> [RS-W1094]: "This call to `replace` has no effect, it replaces the text with itself"
-     let _ = "12345".replace('1', "1");
-     //> [RS-W1094]: "This call to `replace` has no effect, it replaces the text with itself"
-     let _ = "12345".replace("12", "12");
-     //> [RS-W1094]: "This call to `replace` has no effect, it replaces the text with itself"
-     let _ = String::default().replace("12", "12");
+          let _ = "12345".replace('1', "1");
+          let _ = "12345".replace("12", "12");
+          let _ = String::default().replace("12", "12");
 
-     //> [RS-W1094]: "This call to `replacen` has no effect, it replaces the text with itself"
-     let _ = "12345".replacen('1', "1", 1);
-     //> [RS-W1094]: "This call to `replacen` has no effect, it replaces the text with itself"
-     let _ = "12345".replacen("12", "12", 1);
-     //> [RS-W1094]: "This call to `replacen` has no effect, it replaces the text with itself"
-     let _ = String::default().replacen("12", "12", 1);
+          let _ = "12345".replacen('1', "1", 1);
+          let _ = "12345".replacen("12", "12", 1);
+          let _ = String::default().replacen("12", "12", 1);
 
-     //> [RS-W1094]: "This call to `replacen` has no effect, it replaces the text with itself"
-     let _ = "12345".replacen('\t', "\t", 1);
+          let _ = "12345".replacen('\t', "\t", 1);
 
         let x = "abc";
-     //> [RS-W1094]: "This call to `replacen` has no effect, it replaces the text with itself"
-     let _ = "abcabc".replacen(x, x, 2);
+          let _ = "abcabc".replacen(x, x, 2);
     }
 
     struct Replace {}

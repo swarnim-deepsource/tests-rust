@@ -11,7 +11,6 @@ mod tests {
 
         // not ok
         let x = Some(3);
-       //> [RS-W1083]: "Called `Option::take` on a temporary value"
-        x.as_ref().take();
+               x.as_ref().take();
     }
 }

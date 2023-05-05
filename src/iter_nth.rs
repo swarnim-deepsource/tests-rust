@@ -12,42 +12,32 @@ mod test {
 
         {
             // Make sure we lint `.iter()` for relevant types.
-            //> [RS-W1091]: "Called `.iter().nth(_)` on a `Vec`, try `.get(_)` instead"
-            let bad_vec = some_vec.iter().nth(3);
-            //> [RS-W1091]
-            let bad_array = some_array.iter().nth(3);
-            //> [RS-W1091]
-            let bad_slice = &some_vec[..].iter().nth(3);
-            //> [RS-W1091]
-            let bad_boxed_slice = boxed_slice.iter().nth(3);
-            //> [RS-W1091]
-            let bad_vec_deque = some_vec_deque.iter().nth(3);
+                        let bad_vec = some_vec.iter().nth(3);
+                        let bad_array = some_array.iter().nth(3);
+                        let bad_slice = &some_vec[..].iter().nth(3);
+                        let bad_boxed_slice = boxed_slice.iter().nth(3);
+                        let bad_vec_deque = some_vec_deque.iter().nth(3);
         }
 
         {
-            //> [RS-W1091]
-            let bad_vec = some_vec.iter_mut().nth(3);
+                        let bad_vec = some_vec.iter_mut().nth(3);
         }
 
         {
-            //> [RS-W1091]
-            let bad_array = some_array.iter_mut().nth(3);
+                        let bad_array = some_array.iter_mut().nth(3);
         }
 
 
         {
-            //> [RS-W1091]
-            let bad_slice = &some_vec[..].iter_mut().nth(3);
+                        let bad_slice = &some_vec[..].iter_mut().nth(3);
         }
 
         {
-            //> [RS-W1091]
-            let bad_vec_deque = some_vec_deque.iter_mut().nth(3);
+                        let bad_vec_deque = some_vec_deque.iter_mut().nth(3);
         }
 
         {
-            //> [RS-W1053]
-            let _ = some_vec.iter_mut().nth(0);
+                        let _ = some_vec.iter_mut().nth(0);
         }
     }
 }

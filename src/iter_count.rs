@@ -18,64 +18,36 @@ mod test {
         b_tree_set.insert(1);
         linked_list.push_back(1);
         binary_heap.push(1);
-        //> [RS-W1093]
-        &vec[..].iter().count();
-        //> [RS-W1093]
-        vec.iter().count();
-        //> [RS-W1093]
-        boxed_slice.iter().count();
-        //> [RS-W1093]
-        array.iter().count();
-        //> [RS-W1093]
-        vec_deque.iter().count();
-        //> [RS-W1093]
-        hash_set.iter().count();
-        //> [RS-W1093]
-        hash_map.iter().count();
-        //> [RS-W1093]
-        b_tree_map.iter().count();
-        //> [RS-W1093]
-        b_tree_set.iter().count();
-        //> [RS-W1093]
-        linked_list.iter().count();
-        //> [RS-W1093]
-        binary_heap.iter().count();
+                &vec[..].iter().count();
+                vec.iter().count();
+                boxed_slice.iter().count();
+                array.iter().count();
+                vec_deque.iter().count();
+                hash_set.iter().count();
+                hash_map.iter().count();
+                b_tree_map.iter().count();
+                b_tree_set.iter().count();
+                linked_list.iter().count();
+                binary_heap.iter().count();
 
-        //> [RS-W1093]
-        vec.iter_mut().count();
-        //> [RS-W1093]
-        &vec[..].iter_mut().count();
-        //> [RS-W1093]
-        array.iter_mut().count();
-        //> [RS-W1093]
-        vec_deque.iter_mut().count();
-        //> [RS-W1093]
-        hash_map.iter_mut().count();
-        //> [RS-W1093]
-        b_tree_map.iter_mut().count();
-        //> [RS-W1093]
-        linked_list.iter_mut().count();
+                vec.iter_mut().count();
+                &vec[..].iter_mut().count();
+                array.iter_mut().count();
+                vec_deque.iter_mut().count();
+                hash_map.iter_mut().count();
+                b_tree_map.iter_mut().count();
+                linked_list.iter_mut().count();
 
-        //> [RS-W1093]
-        &vec[..].into_iter().count();
-        //> [RS-W1093]
-        vec.into_iter().count();
-        //> [RS-W1093]
-        array.into_iter().count();
-        //> [RS-W1093]
-        vec_deque.into_iter().count();
-        //> [RS-W1093]
-        hash_set.into_iter().count();
-        //> [RS-W1093]
-        hash_map.into_iter().count();
-        //> [RS-W1093]
-        b_tree_map.into_iter().count();
-        //> [RS-W1093]
-        b_tree_set.into_iter().count();
-        //> [RS-W1093]
-        linked_list.into_iter().count();
-        //> [RS-W1093]
-        binary_heap.into_iter().count();
+                &vec[..].into_iter().count();
+                vec.into_iter().count();
+                array.into_iter().count();
+                vec_deque.into_iter().count();
+                hash_set.into_iter().count();
+                hash_map.into_iter().count();
+                b_tree_map.into_iter().count();
+                b_tree_set.into_iter().count();
+                linked_list.into_iter().count();
+                binary_heap.into_iter().count();
     }
 
     /// Struct to generate false positives for things with `.iter()`.

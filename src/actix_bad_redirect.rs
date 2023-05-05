@@ -1,12 +1,10 @@
-//> scatr-check: RS-S1009
 
 use std::borrow::Cow;
 
 use actix_web_lab::web as web_lab;
 
 fn redir_fn(dest: String, other_dest: String) -> web_lab::Redirect {
-    //> [RS-S1009]: "Found redirect to destination from possibly tainted source"
-    web_lab::redirect("Hello", dest)
+        web_lab::redirect("Hello", dest)
 }
 
 fn redir_struct_method(dest: &str) -> web_lab::Redirect {

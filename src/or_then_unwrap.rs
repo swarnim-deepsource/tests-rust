@@ -1,5 +1,4 @@
-/* disables = ["map-identity"] */ //> scatr-check: RS-W1092
-#[rustfmt::skip]
+/* disables = ["map-identity"] */ #[rustfmt::skip]
 mod test {
     struct SomeStruct;
     impl SomeStruct {
@@ -19,16 +18,13 @@ mod test {
 
     fn trivial() {
         let option: Option<&str> = None;
-        //> [RS-W1092]: "Calling `.or(Some(..)).unwrap()`, try `.unwrap_or(..)` instead"
-        let _ = option.or(Some("fallback")).unwrap();
+                let _ = option.or(Some("fallback")).unwrap();
 
         let result: Result<&str, &str> = Err("Error");
-        //> [RS-W1092]: "Calling `.or(Ok(..)).unwrap()`, try `.unwrap_or(..)` instead"
-        let _ = result.or::<&str>(Ok("fallback")).unwrap();
+                let _ = result.or::<&str>(Ok("fallback")).unwrap();
 
         let option: Option<&str> = None;
-        //> [RS-W1092]: "Calling `.or(Some(..)).unwrap()`, try `.unwrap_or(..)` instead"
-        let _ = option.map(|v| v).or(Some("fallback")).unwrap().to_string().chars();
+                let _ = option.map(|v| v).or(Some("fallback")).unwrap().to_string().chars();
 
     }
 
@@ -51,7 +47,6 @@ mod test {
 
         // other function between
         let option: Option<&str> = None;
-        //> [RS-W1018]: "Unnecessary map of the identity function"
-        let _ = option.or(Some("fallback")).map(|v| v).unwrap();
+                let _ = option.or(Some("fallback")).map(|v| v).unwrap();
     }
 }

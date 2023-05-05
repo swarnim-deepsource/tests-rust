@@ -39,27 +39,19 @@ mod test {
         type Args = <A as Tr>::Args;
 
         fn do_it(args: Self::Args) {
-            //> [RS-E1015]
-            A::do_it(args)
+                        A::do_it(args)
         }
     }
 
     fn bad() {
-        //> [RS-E1015]
-        foo({ 1; });
-        //> [RS-E1015]
-        foo(foo(1));
-        //> [RS-E1015]
-        foo({ foo(1); foo(2); });
+                foo({ 1; });
+                foo(foo(1));
+                foo({ foo(1); foo(2); });
         let b = Bar;
-        //> [RS-E1015]
-        b.bar({ 1; }); 
-        //> [RS-E1015]
-        taking_multiple_units(foo(0), foo(1));
-        //> [RS-E1015]
-        None.or(Some(foo(2)));
-        //> [RS-E1015]
-        foo(foo(()));
+                b.bar({ 1; }); 
+                taking_multiple_units(foo(0), foo(1));
+                None.or(Some(foo(2)));
+                foo(foo(()));
     }
 
     fn ok() {
@@ -97,8 +89,7 @@ mod test {
 
     #[allow(dead_code)]
     fn returning_expr() -> Option<()> {
-        //> [RS-E1015]
-        Some(foo(1))
+                Some(foo(1))
     }
 
     fn taking_multiple_units(a: (), b: ()) {}

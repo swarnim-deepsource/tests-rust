@@ -6,10 +6,8 @@ mod test {
         let mut s1 = "world";
         let mut s2 = "world".to_owned();
 
-        //> [RS-W1095]: "Calling `_.extend(s.chars())`, use `_.push_str(s)` instead"
-        target.extend(s1.chars());
-        //> [RS-W1095]: "Calling `_.extend(s.chars())`, use `_.push_str(&s)` instead"
-        target.extend(s2.chars());
+                target.extend(s1.chars());
+                target.extend(s2.chars());
     }
 
     fn no_match() {

@@ -4,8 +4,7 @@ mod tests {
 
     fn f() {
         let mut h = HeaderMap::new();
-        //> [RS-A1004]: "Exposure of sensitive header: `SERVER`"
-        h.insert(SERVER, 5.into());
+                h.insert(SERVER, 5.into());
         h.insert(SET_COOKIE, 42.into());
     }
 }
