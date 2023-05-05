@@ -1,0 +1,16 @@
+[package]
+name = "tests"
+version = "0.1.0"
+edition = "2021"
+
+[[bin]]
+name = "main"
+path = "src/main.rs"
+
+[dependencies]
+cookie = "0.17.0"
+http = "0.2.9"
+parking_lot = "0.12.1"
+libc = "0.2.140"
+regex = "<1.5.4"
+actix-web-lab = "0.19.1"
